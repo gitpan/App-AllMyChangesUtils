@@ -1,0 +1,83 @@
+#!/usr/bin/env perl
+
+# PODNAME: get_github_favorites
+
+use strict;
+use warnings FATAL => 'all';
+use feature 'say';
+use utf8;
+use open qw(:std :utf8);
+
+use HTTP::Tiny;
+use JSON;
+
+sub get_repos_liked_by_user {
+    my ($github_login) = @_;
+
+    # https://developer.github.com/v3/activity/starring/#list-repositories-being-starred
+
+    my $json = HTTP::Tiny->new->get("https://api.github.com/users/$github_login/starred")->{content};
+    my $data = from_json($json);
+
+    my @repos;
+    foreach my $d (@{$data}) {
+        push @repos, {
+            name => $d->{name},
+            url => $d->{clone_url},
+            language => $d->{language},
+        };
+    }
+    return @repos;
+}
+
+sub main {
+
+    my $github_login = $ARGV[0];
+
+    if (not defined $github_login) {
+        say "You should run it as `$0 GITHUB_LOGIN`";
+        exit 1;
+    }
+
+    my @repos = get_repos_liked_by_user($github_login);
+
+    say 'namespace,name,source';
+
+    foreach my $r (@repos) {
+        my $language = $r->{language} // 'unknown';
+        say
+            $language . ','
+            . $r->{name} . ','
+            . $r->{url}
+            ;
+    }
+
+}
+main();
+
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+get_github_favorites
+
+=head1 VERSION
+
+version 1.0.0
+
+=head1 AUTHOR
+
+Ivan Bessarabov <ivan@bessarabov.ru>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by Ivan Bessarabov.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

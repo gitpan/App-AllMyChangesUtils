@@ -1,0 +1,32 @@
+---
+abstract: 'utils for site http://allmychanges.com'
+author:
+  - 'Ivan Bessarabov <ivan@bessarabov.ru>'
+build_requires:
+  Test::More: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.132830'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: App-AllMyChangesUtils
+requires:
+  Data::Printer: 0
+  ElasticSearch: 0
+  HTTP::Tiny: 0
+  JSON: 0
+  LWP::Simple: 0
+  feature: 0
+  open: 0
+  perl: v5.14.0
+  strict: 0
+  utf8: 0
+  warnings: 0
+resources:
+  bugtracker: https://github.com/bessarabov/App-AllMyChangesUtils/issues
+  homepage: https://github.com/bessarabov/App-AllMyChangesUtils
+  repository: https://github.com/bessarabov/App-AllMyChangesUtils.git
+version: 1.0.0
