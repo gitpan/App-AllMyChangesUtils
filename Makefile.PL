@@ -28,6 +28,7 @@ my %WriteMakefileArgs = (
     "ElasticSearch" => 0,
     "HTTP::Tiny" => 0,
     "JSON" => 0,
+    "JSON::PP" => 0,
     "LWP::Simple" => 0,
     "feature" => 0,
     "open" => 0,
@@ -38,7 +39,7 @@ my %WriteMakefileArgs = (
   "TEST_REQUIRES" => {
     "Test::More" => 0
   },
-  "VERSION" => "1.0.0",
+  "VERSION" => "1.0.1",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -50,6 +51,7 @@ my %FallbackPrereqs = (
   "ElasticSearch" => 0,
   "HTTP::Tiny" => 0,
   "JSON" => 0,
+  "JSON::PP" => 0,
   "LWP::Simple" => 0,
   "Test::More" => 0,
   "feature" => 0,

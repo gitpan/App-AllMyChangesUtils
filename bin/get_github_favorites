@@ -2,6 +2,7 @@
 
 # PODNAME: get_github_favorites
 
+use 5.014;
 use strict;
 use warnings FATAL => 'all';
 use feature 'say';
@@ -9,7 +10,7 @@ use utf8;
 use open qw(:std :utf8);
 
 use HTTP::Tiny;
-use JSON;
+use JSON::PP;
 
 sub get_repos_liked_by_user {
     my ($github_login) = @_;
@@ -17,7 +18,7 @@ sub get_repos_liked_by_user {
     # https://developer.github.com/v3/activity/starring/#list-repositories-being-starred
 
     my $json = HTTP::Tiny->new->get("https://api.github.com/users/$github_login/starred")->{content};
-    my $data = from_json($json);
+    my $data = decode_json($json);
 
     my @repos;
     foreach my $d (@{$data}) {
@@ -67,7 +68,7 @@ get_github_favorites
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 AUTHOR
 
