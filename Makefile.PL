@@ -27,6 +27,7 @@ my %WriteMakefileArgs = (
     "Data::Printer" => 0,
     "ElasticSearch" => 0,
     "HTTP::Tiny" => 0,
+    "IO::Socket::SSL" => "1.56",
     "JSON" => 0,
     "JSON::PP" => 0,
     "LWP::Simple" => 0,
@@ -39,7 +40,7 @@ my %WriteMakefileArgs = (
   "TEST_REQUIRES" => {
     "Test::More" => 0
   },
-  "VERSION" => "1.0.1",
+  "VERSION" => "1.0.2",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -50,6 +51,7 @@ my %FallbackPrereqs = (
   "Data::Printer" => 0,
   "ElasticSearch" => 0,
   "HTTP::Tiny" => 0,
+  "IO::Socket::SSL" => "1.56",
   "JSON" => 0,
   "JSON::PP" => 0,
   "LWP::Simple" => 0,

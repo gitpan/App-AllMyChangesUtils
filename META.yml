@@ -17,6 +17,7 @@ requires:
   Data::Printer: 0
   ElasticSearch: 0
   HTTP::Tiny: 0
+  IO::Socket::SSL: 1.56
   JSON: 0
   JSON::PP: 0
   LWP::Simple: 0
@@ -30,4 +31,4 @@ resources:
   bugtracker: https://github.com/bessarabov/App-AllMyChangesUtils/issues
   homepage: https://github.com/bessarabov/App-AllMyChangesUtils
   repository: https://github.com/bessarabov/App-AllMyChangesUtils.git
-version: 1.0.1
+version: 1.0.2

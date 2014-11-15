@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package App::AllMyChangesUtils;
 {
-  $App::AllMyChangesUtils::VERSION = '1.0.1';
+  $App::AllMyChangesUtils::VERSION = '1.0.2';
 }
 
 # ABSTRACT: utils for site http://allmychanges.com
@@ -22,11 +22,11 @@ App::AllMyChangesUtils - utils for site http://allmychanges.com
 
 =head1 VERSION
 
-version 1.0.1
+version 1.0.2
 
 =head1 DESCRIPTION
 
-Several scripts that help loading data to the site L< http://allmychanges.com>
+Several scripts that help loading data to the site L<http://allmychanges.com>
 
 =head1 AUTHOR
 
